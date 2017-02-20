@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tourikeepModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbtourikeep.dbo.COMENTARIOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="COMENTARIOS">
+          <Key>
+            <PropertyRef Name="Id_comentario" />
+          </Key>
+          <Property Name="Id_comentario" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Valoracion" Type="float" />
+          <Property Name="Comentario" Type="nvarchar(max)" />
+          <Property Name="Id_sitio" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbtourikeep.dbo.EVENTOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EVENTOS">
+          <Key>
+            <PropertyRef Name="Id_evento" />
+          </Key>
+          <Property Name="Id_evento" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Id_sitio" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbtourikeep.dbo.HORARIOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="HORARIOS">
+          <Key>
+            <PropertyRef Name="Id_horario" />
+          </Key>
+          <Property Name="Id_horario" Type="int" Nullable="false" />
+          <Property Name="Dia" Type="nvarchar" MaxLength="255" />
+          <Property Name="Hora_apertura" Type="nvarchar" MaxLength="5" />
+          <Property Name="Hora_cierre" Type="nvarchar" MaxLength="5" />
+          <Property Name="Id_sitio" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbtourikeep.dbo.SITIOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SITIOS">
+          <Key>
+            <PropertyRef Name="Id_sitio" />
+          </Key>
+          <Property Name="Id_sitio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="255" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="255" />
+          <Property Name="Codigo_postal" Type="nvarchar" MaxLength="5" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="255" />
+          <Property Name="Coordenadas" Type="nvarchar" MaxLength="255" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="9" />
+          <Property Name="Categoria" Type="nvarchar" MaxLength="255" />
+          <Property Name="Sub_Categoria" Type="nvarchar" MaxLength="255" />
+          <Property Name="Valoracion_media" Type="float" />
+          <Property Name="Foto" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="tourikeepModelStoreContainer">
+          <EntitySet Name="COMENTARIOS" EntityType="Self.COMENTARIOS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [COMENTARIOS].[Id_comentario] AS [Id_comentario], 
+    [COMENTARIOS].[Nombre] AS [Nombre], 
+    [COMENTARIOS].[Fecha] AS [Fecha], 
+    [COMENTARIOS].[Valoracion] AS [Valoracion], 
+    [COMENTARIOS].[Comentario] AS [Comentario], 
+    [COMENTARIOS].[Id_sitio] AS [Id_sitio]
+    FROM [dbo].[COMENTARIOS] AS [COMENTARIOS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EVENTOS" EntityType="Self.EVENTOS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EVENTOS].[Id_evento] AS [Id_evento], 
+    [EVENTOS].[Nombre] AS [Nombre], 
+    [EVENTOS].[Fecha] AS [Fecha], 
+    [EVENTOS].[Id_sitio] AS [Id_sitio]
+    FROM [dbo].[EVENTOS] AS [EVENTOS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="HORARIOS" EntityType="Self.HORARIOS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [HORARIOS].[Id_horario] AS [Id_horario], 
+    [HORARIOS].[Dia] AS [Dia], 
+    [HORARIOS].[Hora_apertura] AS [Hora_apertura], 
+    [HORARIOS].[Hora_cierre] AS [Hora_cierre], 
+    [HORARIOS].[Id_sitio] AS [Id_sitio]
+    FROM [dbo].[HORARIOS] AS [HORARIOS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SITIOS" EntityType="Self.SITIOS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SITIOS].[Id_sitio] AS [Id_sitio], 
+    [SITIOS].[Nombre] AS [Nombre], 
+    [SITIOS].[Descripcion] AS [Descripcion], 
+    [SITIOS].[Direccion] AS [Direccion], 
+    [SITIOS].[Codigo_postal] AS [Codigo_postal], 
+    [SITIOS].[Provincia] AS [Provincia], 
+    [SITIOS].[Coordenadas] AS [Coordenadas], 
+    [SITIOS].[Telefono] AS [Telefono], 
+    [SITIOS].[Categoria] AS [Categoria], 
+    [SITIOS].[Sub_Categoria] AS [Sub_Categoria], 
+    [SITIOS].[Valoracion_media] AS [Valoracion_media], 
+    [SITIOS].[Foto] AS [Foto]
+    FROM [dbo].[SITIOS] AS [SITIOS]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tourikeepModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="COMENTARIOS">
+          <Key>
+            <PropertyRef Name="Id_comentario" />
+          </Key>
+          <Property Name="Id_comentario" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Valoracion" Type="Double" />
+          <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id_sitio" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EVENTOS">
+          <Key>
+            <PropertyRef Name="Id_evento" />
+          </Key>
+          <Property Name="Id_evento" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Id_sitio" Type="Int32" />
+        </EntityType>
+        <EntityType Name="HORARIOS">
+          <Key>
+            <PropertyRef Name="Id_horario" />
+          </Key>
+          <Property Name="Id_horario" Type="Int32" Nullable="false" />
+          <Property Name="Dia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Hora_apertura" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Hora_cierre" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Id_sitio" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SITIOS">
+          <Key>
+            <PropertyRef Name="Id_sitio" />
+          </Key>
+          <Property Name="Id_sitio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Codigo_postal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Coordenadas" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="Categoria" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sub_Categoria" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Valoracion_media" Type="Double" />
+          <Property Name="Foto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="COMENTARIOS" EntityType="Self.COMENTARIOS" />
+          <EntitySet Name="EVENTOS" EntityType="Self.EVENTOS" />
+          <EntitySet Name="HORARIOS" EntityType="Self.HORARIOS" />
+          <EntitySet Name="SITIOS" EntityType="Self.SITIOS" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tourikeepModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="COMENTARIOS">
+            <EntityTypeMapping TypeName="tourikeepModel.COMENTARIOS">
+              <MappingFragment StoreEntitySet="COMENTARIOS">
+                <ScalarProperty Name="Id_comentario" ColumnName="Id_comentario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Valoracion" ColumnName="Valoracion" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="Id_sitio" ColumnName="Id_sitio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EVENTOS">
+            <EntityTypeMapping TypeName="tourikeepModel.EVENTOS">
+              <MappingFragment StoreEntitySet="EVENTOS">
+                <ScalarProperty Name="Id_evento" ColumnName="Id_evento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Id_sitio" ColumnName="Id_sitio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HORARIOS">
+            <EntityTypeMapping TypeName="tourikeepModel.HORARIOS">
+              <MappingFragment StoreEntitySet="HORARIOS">
+                <ScalarProperty Name="Id_horario" ColumnName="Id_horario" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Hora_apertura" ColumnName="Hora_apertura" />
+                <ScalarProperty Name="Hora_cierre" ColumnName="Hora_cierre" />
+                <ScalarProperty Name="Id_sitio" ColumnName="Id_sitio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SITIOS">
+            <EntityTypeMapping TypeName="tourikeepModel.SITIOS">
+              <MappingFragment StoreEntitySet="SITIOS">
+                <ScalarProperty Name="Id_sitio" ColumnName="Id_sitio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Codigo_postal" ColumnName="Codigo_postal" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Coordenadas" ColumnName="Coordenadas" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Sub_Categoria" ColumnName="Sub_Categoria" />
+                <ScalarProperty Name="Valoracion_media" ColumnName="Valoracion_media" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

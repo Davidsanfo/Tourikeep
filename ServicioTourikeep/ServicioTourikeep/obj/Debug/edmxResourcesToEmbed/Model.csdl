@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tourikeepModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="COMENTARIOS">
+    <Key>
+      <PropertyRef Name="Id_comentario" />
+    </Key>
+    <Property Name="Id_comentario" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Valoracion" Type="Double" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Id_sitio" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EVENTOS">
+    <Key>
+      <PropertyRef Name="Id_evento" />
+    </Key>
+    <Property Name="Id_evento" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Id_sitio" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HORARIOS">
+    <Key>
+      <PropertyRef Name="Id_horario" />
+    </Key>
+    <Property Name="Id_horario" Type="Int32" Nullable="false" />
+    <Property Name="Dia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Hora_apertura" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Hora_cierre" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Id_sitio" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SITIOS">
+    <Key>
+      <PropertyRef Name="Id_sitio" />
+    </Key>
+    <Property Name="Id_sitio" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Codigo_postal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Provincia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Coordenadas" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="Categoria" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Sub_Categoria" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Valoracion_media" Type="Double" />
+    <Property Name="Foto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="COMENTARIOS" EntityType="Self.COMENTARIOS" />
+    <EntitySet Name="EVENTOS" EntityType="Self.EVENTOS" />
+    <EntitySet Name="HORARIOS" EntityType="Self.HORARIOS" />
+    <EntitySet Name="SITIOS" EntityType="Self.SITIOS" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,1 @@
+C:\Users\David\Source\Repos\TorurikeepAzure\ServicioTourikeep\ServicioTourikeep\obj\Debug\ServicioTourikeep.csprojResolveAssemblyReference.cache

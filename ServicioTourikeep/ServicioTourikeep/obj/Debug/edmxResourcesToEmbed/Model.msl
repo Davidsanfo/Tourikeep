@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tourikeepModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="COMENTARIOS">
+      <EntityTypeMapping TypeName="tourikeepModel.COMENTARIOS">
+        <MappingFragment StoreEntitySet="COMENTARIOS">
+          <ScalarProperty Name="Id_comentario" ColumnName="Id_comentario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Valoracion" ColumnName="Valoracion" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="Id_sitio" ColumnName="Id_sitio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EVENTOS">
+      <EntityTypeMapping TypeName="tourikeepModel.EVENTOS">
+        <MappingFragment StoreEntitySet="EVENTOS">
+          <ScalarProperty Name="Id_evento" ColumnName="Id_evento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Id_sitio" ColumnName="Id_sitio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HORARIOS">
+      <EntityTypeMapping TypeName="tourikeepModel.HORARIOS">
+        <MappingFragment StoreEntitySet="HORARIOS">
+          <ScalarProperty Name="Id_horario" ColumnName="Id_horario" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Hora_apertura" ColumnName="Hora_apertura" />
+          <ScalarProperty Name="Hora_cierre" ColumnName="Hora_cierre" />
+          <ScalarProperty Name="Id_sitio" ColumnName="Id_sitio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SITIOS">
+      <EntityTypeMapping TypeName="tourikeepModel.SITIOS">
+        <MappingFragment StoreEntitySet="SITIOS">
+          <ScalarProperty Name="Id_sitio" ColumnName="Id_sitio" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Codigo_postal" ColumnName="Codigo_postal" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Coordenadas" ColumnName="Coordenadas" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Sub_Categoria" ColumnName="Sub_Categoria" />
+          <ScalarProperty Name="Valoracion_media" ColumnName="Valoracion_media" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
